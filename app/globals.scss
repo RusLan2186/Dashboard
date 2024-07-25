@@ -1,0 +1,59 @@
+@import "reset.scss";
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fafbff;
+  font-size: 14px;
+}
+
+body.lock {
+  @media (max-width: 850px) {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  display: flex;
+  column-gap: 35px;
+  box-sizing: border-box;
+  @media (max-width: 1400px) {
+    column-gap: 15px;
+  }
+  @media (max-width: 1199.98px) {
+    flex-direction: column;
+  }
+}
+
+.container {
+  padding: 35px;
+  width: 100%;
+  @media (max-width: 1400px) {
+    padding: 15px;
+  }
+}
+
+
+.spoiler-enter {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.spoiler-enter-active {
+  max-height: 500px; 
+  transition: max-height 300ms ease-out;
+}
+
+.spoiler-exit {
+  max-height: 500px; 
+}
+
+.spoiler-exit-active {
+  max-height: 0;
+  transition: max-height 300ms ease-out;
+}
+
+.error{
+  color:red;
+  font-weight: 600;
+  font-size: 18px;
+}
