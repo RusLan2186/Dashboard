@@ -38,7 +38,7 @@ const Customers = () => {
   );
 
   return (
-    <div className={cl.content}>
+    <div>
       <div className={cl.title}>
         <h1>Hello Evano</h1>
         <Image src={HelloIcon} alt='Hello' />,
