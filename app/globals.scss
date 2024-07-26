@@ -32,19 +32,18 @@ body.lock {
   }
 }
 
-
 .spoiler-enter {
   max-height: 0;
   overflow: hidden;
 }
 
 .spoiler-enter-active {
-  max-height: 500px; 
+  max-height: 500px;
   transition: max-height 300ms ease-out;
 }
 
 .spoiler-exit {
-  max-height: 300px; 
+  max-height: 300px;
 }
 
 .spoiler-exit-active {
@@ -52,8 +51,27 @@ body.lock {
   transition: max-height 300ms ease-out;
 }
 
-.error{
-  color:red;
+.error {
+  color: red;
   font-weight: 600;
   font-size: 18px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.warnIcon {
+  display: flex;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+    @media (max-width: 600px){
+     height: 100%;
+     width: 100%;
+    }
+  }
 }
