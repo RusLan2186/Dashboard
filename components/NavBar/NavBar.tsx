@@ -6,7 +6,7 @@ import LogoIcon from '../../icons/NavBar/logo__icon.svg';
 import userPhoto from '../../icons/NavBar/photo.jpg';
 import Image from 'next/image';
 import NavMenu from '../NavMenu/NavMenu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const NavBar: React.FC = () => {
   const [isOpenBurger, setIsOpenBurger] = useState(false);
@@ -14,12 +14,19 @@ const NavBar: React.FC = () => {
     setIsOpenBurger(!isOpenBurger);
   };
 
-  const bodyEl = document.body;
-  if (isOpenBurger) {
-    bodyEl.classList.add('lock');
-  } else {
-    bodyEl.classList.remove('lock');
-  }
+
+    useEffect(() => {
+      const bodyEl = document.body;
+      if (isOpenBurger) {
+        bodyEl.classList.add('lock');
+      } else {
+        bodyEl.classList.remove('lock');
+      }
+  
+      return () => {
+        bodyEl.classList.remove('lock');
+      };
+    }, [isOpenBurger]);
 
   return (
     <div className={cl.wrapper}>
